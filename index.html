@@ -31,18 +31,28 @@
             justify-content: space-between;
             margin-bottom: 20px;
         }
+        .header-section div {
+            flex: 1;
+            margin-right: 10px;
+        }
+        .header-section div:last-child {
+            margin-right: 0;
+        }
         .header-section label {
             font-weight: bold;
         }
         .header-section input {
+            width: 100%;
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
+            box-sizing: border-box;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 20px;
         }
         th, td {
             border: 1px solid #ddd;
@@ -93,30 +103,53 @@
             <tbody>
                 <tr>
                     <td>Tienda</td>
-                    <td><input type="text" name="tienda"></td>
+                    <td><input type="text" id="tienda" name="tienda"></td>
                 </tr>
                 <tr>
                     <td>Perfumería</td>
-                    <td><input type="text" name="perfumeria"></td>
+                    <td><input type="text" id="perfumeria" name="perfumeria"></td>
                 </tr>
                 <tr>
                     <td>Bazar</td>
-                    <td><input type="text" name="bazar"></td>
+                    <td><input type="text" id="bazar" name="bazar"></td>
                 </tr>
                 <tr>
                     <td>Lácteos</td>
-                    <td><input type="text" name="lacteos"></td>
+                    <td><input type="text" id="lacteos" name="lacteos"></td>
                 </tr>
                 <tr>
                     <td>Fiambrería</td>
-                    <td><input type="text" name="fiambreria"></td>
+                    <td><input type="text" id="fiambreria" name="fiambreria"></td>
                 </tr>
                 <tr>
                     <td>Almacén, Limpieza y Bebidas</td>
-                    <td><input type="text" name="almacen-limpieza-bebidas"></td>
+                    <td><input type="text" id="almacen-limpieza-bebidas" name="almacen-limpieza-bebidas"></td>
                 </tr>
             </tbody>
         </table>
     </div>
+    <script>
+        // Guardar datos en Local Storage
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', () => {
+                localStorage.setItem(input.id, input.value);
+            });
+        });
+
+        // Cargar datos desde Local Storage
+        window.onload = () => {
+            document.querySelectorAll('input').forEach(input => {
+                if (localStorage.getItem(input.id)) {
+                    input.value = localStorage.getItem(input.id);
+                }
+            });
+            if (localStorage.getItem('day-name')) {
+                document.getElementById('day-name').value = localStorage.getItem('day-name');
+            }
+            if (localStorage.getItem('date')) {
+                document.getElementById('date').value = localStorage.getItem('date');
+            }
+        };
+    </script>
 </body>
 </html>
