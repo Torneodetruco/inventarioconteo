@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Esta Noche</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .header-section {
+            margin-bottom: 20px;
+        }
+        .header-section input {
+            margin-left: 10px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1>Para contar esta noche</h1>
+        <label for="day-name">Nombre del día:</label>
+        <input type="text" id="day-name" name="day-name">
+        <label for="date">Fecha:</label>
+        <input type="text" id="date" name="date">
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Espacio para escribir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tienda</td>
+                <td><input type="text" name="tienda"></td>
+            </tr>
+            <tr>
+                <td>Perfumería</td>
+                <td><input type="text" name="perfumeria"></td>
+            </tr>
+            <tr>
+                <td>Bazar</td>
+                <td><input type="text" name="bazar"></td>
+            </tr>
+            <tr>
+                <td>Lácteos</td>
+                <td><input type="text" name="lacteos"></td>
+            </tr>
+            <tr>
+                <td>Fiambrería</td>
+                <td><input type="text" name="fiambreria"></td>
+            </tr>
+            <tr>
+                <td>Almacén, Limpieza y Bebidas</td>
+                <td><input type="text" name="almacen-limpieza-bebidas"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
